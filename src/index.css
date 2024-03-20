@@ -4,6 +4,6 @@
 
 @layer components {
     .btn-primary {
-      @apply border-black rounded-lg border-2 px-4 bg-slate-200 text-black shadow-xl hover:text-black focus:shadow-none  hover:border-slate-700 hover:bg-slate-300 focus:bg-slate-900 focus:text-white;
+      @apply  border-black rounded-lg border-2 px-4 bg-slate-200 text-black shadow-xl text-lg hover:text-black focus:shadow-none  hover:border-slate-700 hover:bg-slate-300 focus:bg-black focus:text-white pointer-events-auto;
     }
   }
