@@ -102,9 +102,11 @@ const Calculator = memo(function Calculator() {
                         return;
                     }
                     break;
-                case '=':    
-                        setSecondaryValue(result + ' ' + event)
-                        return;
+                case '=':
+                    if (event != "=") {
+                        setSecondaryValue(parseFloat(secondaryValue) + ' ' + event)
+                    }
+                    return;
                 default:
                         alert('Input Not Supported /n Please Refresh The Page')
                     return;
@@ -113,9 +115,6 @@ const Calculator = memo(function Calculator() {
         /////need to complete ' = ' logic
         lastOperation = secondaryValue[secondaryValue.length-1]
         if (e === '=' && secondaryValue != 'Ans = 0') {
-            if (primaryValue === '0') {
-                return setSecondaryValue('Ans = '+ parseFloat(secondaryValue))
-            }
             operationCase(lastOperation, e)
             return;
         }
