@@ -1,21 +1,21 @@
+import {memo} from "react"
 import PropTypes from "prop-types";
 
-function Output(props) {
+const Output = memo(function Output(props) {
 
     return <>
-        <div className="text-lg text-slate-400">{props.previousOutput}</div>
-        <div className="text-white">{props.currentOutput}</div>
+        <div className={props.styles}>{props.value}</div>
     </>
-}
+});
 
 Output.defaultProps = {
-    currentOutput: "0",
-    previousOutput: ""
+    styles: "text-white",
+    value: "0"
 };
 
 Output.propTypes = {
-    currentOutput: PropTypes.string,
-    previousOutput: PropTypes.string
+    styles: PropTypes.string,
+    value: PropTypes.string,
 };
 
 export default Output;
